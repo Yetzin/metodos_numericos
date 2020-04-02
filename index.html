@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+		<title>Métodos numéricos</title>
+		<link rel="stylesheet" type="text/css" href="css/estilos.css?v=1.0">
+		<script type="text/javascript" src="js/Concurrent.Thread.js?v=1.0"></script>
+		<script type="text/javascript" src="js/main.js?v=1.0"></script>
+		<script type="text/javascript" src="js/CMNR.js?v=1.0"></script>
+		<script type="text/javascript" src="js/CEVecto.js?v=1.0"></script>
+		<script type="text/javascript" src="js/CaptDatos.js?v=1.0"></script>
+		<style>
+			*, *:after, *:before{
+				margin: 0;
+				padding: 0;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			#contenedor_carga{
+				height: 67px;
+				width: 67px;
+				border-radius: 50%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				-webkit-transition: all 1s ease;
+				-o-transition: all 1s ease;
+				transition: all 1s ease;
+				z-index: 4;
+			}
+			#carga_ext{
+				border: 7px solid transparent;
+				border-top-color: #25aa00;
+				height: 100%;
+				width: 100%;
+				border-radius: 50%;
+				-webkit-animation: girar 1500ms linear infinite;
+				-o-animation: girar 1500ms linear infinite;
+				animation: girar 1500ms linear infinite;
+			}
+			#carga{
+				border: 7px solid transparent;
+				border-bottom-color: #25aa00;
+				height: 100%;
+				width: 100%;
+				border-radius: 50%;
+				-webkit-animation: girar 1000ms linear infinite;
+				-o-animation: girar 1000ms linear infinite;
+				animation: girar 1000ms linear infinite;
+			}
+			@keyframes girar{
+				from { transform: rotate(0deg); }
+				to{ transform: rotate(360deg); }
+			}
+		</style>
+	</head>
+	<body>
+		<div id="contenedor_carga">
+			<div id="carga_ext"><div id="carga"></div></div>
+		</div>
+		<header>
+			<p id="tit_m" title="Métodos Numéricos">Algoritmos de Métodos numéricos</p>
+			<div id="mantener" class="menu_barras" title="Menú">
+				<div id="barra_1" class="barra_ho"></div>
+				<div id="barra_2" class="barra_ho"></div>
+				<div id="barra_3" class="barra_ho"></div>
+				<div class="cont_menu_s">
+					<div class="triang_barras"></div>
+					<div class="menu_s_barras">
+						<div class="caja_al" id="u1">
+							<p>Unidad 1 - Método de Newton-Rapson</p>
+						</div>
+						<div class="caja_al" id="u2">
+							<p>Unidad 2 - Eigenvalores</p>
+						</div>
+						<div class="caja_al" id="u3">
+							<p>Unidad 3 - Longitud de arco</p>
+						</div>
+						<div class="caja_al" id="u4">
+							<p>Unidad 4 - Regresión por mínimos cuadrádos</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="fondo"></div>
+		<div id="contenido">
+			<div class="selecc">
+				<h3>Hola bienvenido a nuestro proyecto.</h3>
+				<br>
+				<br>
+				<p>
+					Los ejercicios recopilados en este repositorio fueron realizados por
+					estudiantes de la carrera de <b>Ingeniería en Sistemas</b> en el
+					<b>Instituto Tecnológico de Querétaro</b> para la materia de
+					Métodos Numéricos.
+				</p>
+				<br>
+				<br>
+				<p>
+					Los algoritmos están divididos en 4 unidades:
+					<ul>
+						<li><i><u>Unidad 1 - Método de Newton-Rapson</u></i>: para encontrar raíces polinómicas.</li>
+						<li><i><u>Unidad 2 - Eigenvalores</u></i>: obtiene los eigenvalores a partir de una matriz cuadrada n*n.</li>
+						<li><i><u>Unidad 3 - Longitud de arco</u></i>: obtiene la longitud de arco de un polinomio en un intervalo dado.</li>
+						<li><i><u>Unidad 4 - Regresión por mínimos cuadrádos</u></i>: obtiene una función cercana a una lista de puntos en el plano cartesiano.</li>
+					</ul>
+				</p>
+				<br>
+				<br>
+				<p>
+					El motivo de hacer publico este repositorio es permitir que sirva como
+					material de apoyo así como de herramientas en caso de llegar a
+					necesitarse, teniendo en cuenta que no se garantiza los resultados
+					obtenidos.
+				</p>
+				<br>
+				<br>
+				<br>
+				<p>
+					Seleccione el algoritmo:
+				</p>
+				<div class="caja_al" id="u1">
+					<p>Unidad 1 - Método de Newton-Rapson</p>
+				</div>
+				<div class="caja_al" id="u2">
+					<p>Unidad 2 - Eigenvalores</p>
+				</div>
+				<div class="caja_al" id="u3">
+					<p>Unidad 3 - Longitud de arco</p>
+				</div>
+				<div class="caja_al" id="u4">
+					<p>Unidad 4 - Regresión por mínimos cuadrádos</p>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p><b>Integrantes:</b></p>
+			<hr>
+			<br>
+			<p class="integrante">- Ramírez Rivera Germán Yetzín</p>
+			<br>
+			<p class="integrante">- Barrera Sanchez Julio</p>
+			<div id="refs">Photo by <a id="un_pic" href="https://unsplash.com/@elizabethlies" target="_blank">elizabeth lies</a> on <a id="un_pic" href="https://unsplash.com" target="_blank">Unsplash</a></div>
+		</footer>
+	</body>
+</html>
