@@ -24,6 +24,7 @@ function menuActivar(){
 function vista(){
 	opcion = this.id;
 	let cambiosHTML = document.querySelector('.selecc');
+	cambiosHTML.setAttribute('style', '');
     switch (opcion) {
         case 'u1':
 			inicializaVars();
@@ -40,10 +41,12 @@ function vista(){
             break;
 
         case 'u2':
+			cambiosHTML.setAttribute('style', 'position: relative; padding: 25px; width: 90%; max-width: 400px; height: 250px; max-height: 80%; background-color: #252932; background-color: #252932cc; color: #fff;');
 			cambiosHTML.innerHTML = '<p>Elija el tamaño de la matriz n<sub>*</sub>n:</p>'
-			+'<input type="number" class="tamm" id="tamm" min="1" onkeydown="if(event.keyCode == 13) aceptarTam();">'
+			+'<input type="number" class="tamm" id="tamm" min="1" onkeydown="if(event.keyCode == 13) aceptarTam();" style="height: 40px; width: 120px; border: 3px solid #3c8397; background-color: #3c8397; background-color: #3c839794; color: #fff; font-weight: 500; font-size: 14px; padding: 0 20px; border-radius: 20px; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0;">'
 			+'<input type="button" onclick="aceptarTam();" class="acept" value="Aceptar">'
 			+'<input type="button" class="cancel" value="Cancelar" onclick="location.reload();">';
+			document.getElementById("tamm").focus();
             break;
 
         case 'u3':

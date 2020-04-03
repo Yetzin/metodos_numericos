@@ -97,8 +97,9 @@ function proceso(tam){
 	_html += '</table><br>';
 	_html += '<div id="_resultados" class="bt_h"><div class="separa_a"><a class="acep_bt" onclick="aceptOPS('+tam+');">Aceptar</a></div><div class="separa_a"><a class="acep_bt" onclick="location.reload();">Cancelar</a></div></div>';
 	_html += '</div>';
-	document.getElementById("contenido").innerHTML = _html;
+	document.querySelector('.selecc').innerHTML = _html;
 	document.getElementById("a0_0").focus();
+	document.querySelector('.selecc').setAttribute('style', 'background: transparent; max-width: auto; width: 100%;');
 	document.getElementById("contenedor_carga").style.display = "none";
 }
 function creaMat(tam){
@@ -125,7 +126,8 @@ function aceptarTam(){
 				+'</div>'
 				+'</div></div>'
 				+'</div>';
-			document.getElementById("contenido").innerHTML += _html;
+			document.querySelector('.selecc').innerHTML += _html;
+			// document.querySelector('.selecc').setAttribute('style', 'background: transparent; max-width: auto; width: 100%;');
 		} else {
 			creaMat(tam_mat);
 		}

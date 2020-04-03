@@ -5,7 +5,7 @@ var _continuar = true;
 var _cero = false;
 var _m_Q;
 var _vect;
-var _msg_result = '';
+var _msg_result;
 var con = 0;
 
 function trasp(A){
@@ -141,6 +141,7 @@ function triangularInf(matEv, tam){
 	return _result;
 }
 function realizaOPS(tam){
+	_msg_result = '';
 	con = 0;
 	_tam = tam;
 	_matriz_original = new Array(tam);
@@ -200,7 +201,7 @@ function realizaOPS(tam){
 		_matriz_original = multMat(mR, _m_Q, tam);
 		con++;
 	}
-	
+
 	//	Fin
 	_msg_result += '<br><br><br><p>La matriz A<sub>i+1</sub> resultante es:</p><br> <div style="display: inline-block; height: max-content; text-align: center; vertical-align: middle;"><div style="display: table; width: 100%; height: 100%;"><div style="display: table-cell; vertical-align: middle;"><div style="vertical-align: middle; display: inline;">A<sub>i+1</sub> = </div><table style="vertical-align: middle;">';
 	//for(var i = 0; i < tam; i++){
